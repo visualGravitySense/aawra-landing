@@ -1,0 +1,176 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.App {
+  text-align: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero {
+  background: linear-gradient(90deg, #ff7eb3, #ff758c);
+  color: #fff;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+}
+
+.hero p {
+  margin: 20px 0;
+}
+
+.cta-button {
+  background: #fff;
+  color: #ff758c;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background: #ffe0e6;
+}
+
+.features {
+  padding: 50px 20px;
+  background: #f9f9f9;
+}
+
+.features h2 {
+  margin-bottom: 20px;
+}
+
+.feature-cards {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.feature-card {
+  background: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 10px;
+  flex: 1 1 calc(33.333% - 20px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card img {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.pricing {
+  padding: 50px 20px;
+}
+
+.pricing-table {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.pricing-plan {
+  background: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 10px;
+  flex: 1 1 calc(50% - 20px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-plan.premium {
+  border: 2px solid #ff758c;
+}
+
+.testimonials {
+  padding: 50px 20px;
+  background: #f9f9f9;
+}
+
+.testimonial-cards {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 10px;
+  flex: 1 1 calc(50% - 20px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact {
+  padding: 50px 20px;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  max-width: 400px;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact button {
+  background: #ff758c;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.contact p {
+  margin-top: 10px;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.contact p.error {
+  color: #f44336;
+}
+
+
+@media (max-width: 768px) {
+  .feature-cards, .pricing-table, .testimonial-cards {
+    flex-direction: column;
+  }
+
+  .feature-card, .pricing-plan, .testimonial-card {
+    flex: 1 1 100%;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .cta-button {
+    font-size: 0.9rem;
+  }
+}

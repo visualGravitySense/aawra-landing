@@ -1,0 +1,1 @@
+This is marketing landing page for beauty service promotion
