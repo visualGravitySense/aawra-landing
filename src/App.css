@@ -31,7 +31,7 @@ body {
 
 .cta-button {
   background: #fff;
-  color: #ff758c;
+  color: #ca1c39;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -43,6 +43,32 @@ body {
 .cta-button:hover {
   background: #ffe0e6;
 }
+
+.advantages-title {
+  font-family: 'Cursive', sans-serif; /* Elegant font like a beauty brand */
+  font-size: 36px;
+  font-weight: bold;
+  color: #000; /* Light purple for a soothing, sophisticated look */
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.advantages-title::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #F2A7D7; /* Soft pink accent */
+  border-radius: 5px;
+}
+
+
 
 .features {
   padding: 50px 20px;
@@ -73,28 +99,174 @@ body {
   margin-bottom: 10px;
 }
 
+.feature-card .icon {
+  font-size: 40px; /* Размер эмодзи */
+  margin-bottom: 10px; /* Расстояние между эмодзи и заголовком */
+}
+
 .pricing {
   padding: 50px 20px;
+  text-align: center;
+  background-color: #f8f9fa;
+}
+
+.pricing-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
 }
 
 .pricing-table {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .pricing-plan {
   background: #fff;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 20px;
-  margin: 10px;
-  flex: 1 1 calc(50% - 20px);
+  flex: 0 1 calc(40% - 10px);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #5a5a5a; /* Добавлена тонкая обводка */
+  text-align: left; /* Выравнивание текста по левому краю */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.pricing-plan.premium {
-  border: 2px solid #ff758c;
+
+
+.pricing-plan:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
+
+.pricing-plan h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.pricing-plan .price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+
+
+
+.pricing-plan .btn {
+  display: block;
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 15px 0;
+  transition: background 0.3s ease;
+}
+
+.pricing-plan .btn:hover {
+  background: #555;
+}
+
+.pricing-plan .credit-note {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.pricing-plan ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+}
+
+.pricing-plan ul li {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+.pricing-plan ul li::before {
+  content: "✔"; /* Галочка */
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  color: #333;
+  border-radius: 50%;
+  font-size: 14px;
+  text-align: center;
+  line-height: 20px;
+  margin-right: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Тень для галочки */
+}
+
+
+.pricing-plan.pro {
+  border: 2px solid #000;
+}
+
+.pricing-plan.enterprise {
+  background: linear-gradient(90deg, #ff7eb3, #ff758c); /* Новый градиент */
+  color: #fff;
+}
+
+.pricing-plan .btn {
+  background: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background: transparent; */
+  color: #333;
+  border: 1px solid #333;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 15px 0;
+  transition: background 0.3s ease, color 0.3s ease;
+  position: relative;
+  box-shadow: 6px 6px 0px #383838; /* Добавлена тень */
+}
+
+.pricing-plan .btn::after {
+  content: "→"; /* Стрелка */
+  margin-left: 10px;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.pricing-plan .btn:hover {
+  background: #333;
+  color: #fff;
+  box-shadow: 3px 3px 0px #8f8f8f; /* Тень меняет цвет при наведении */
+}
+
+.pricing-plan .btn:hover::after {
+  transform: translateX(5px);
+}
+
+/* .pricing-plan.enterprise .btn {
+  background: #fff;
+  color: #4a00e0;
+} */
+
+.pricing-plan.enterprise .credit-note,
+.pricing-plan.enterprise ul li {
+  color: #fdfdfd;
+}
+
+.pricing-plan.enterprise .price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 10px 0;
+}
+
 
 .testimonials {
   padding: 50px 20px;
