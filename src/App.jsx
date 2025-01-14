@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import './App.css';
+import { FaClock, FaUsers, FaChartLine } from 'react-icons/fa';
 
 function App() {
 
@@ -32,7 +33,7 @@ function App() {
           <p>Удобный сервис для записи, продвижения и управления салоном красоты.</p>
           
           <a href="#form">
-            <button className="cta-button">Попробовать бесплатно</button>
+            <button className="cta-button">Оставить заявку</button>
           </a>
           
         </div>
@@ -41,20 +42,26 @@ function App() {
       {/* Features Section */}
       <section className="features">
         <div className="container">
-          <h2>Наши преимущества</h2>
+        <h2 class="advantages-title">Наши преимущества</h2>
           <div className="feature-cards">
             <div className="feature-card">
-              <img src="/icons/time-saving.svg" alt="Экономия времени" />
+              {/* <img src="/icons/time-saving.svg" alt="Экономия времени" /> */}
+              {/* <FaClock size={40} color="#333" /> */}
+              <div className="icon">⌛</div>
               <h3>Экономия времени</h3>
               <p>Ваши клиенты записываются без лишних звонков.</p>
             </div>
             <div className="feature-card">
-              <img src="/icons/clients.svg" alt="Привлечение клиентов" />
+              {/* <img src="/icons/clients.svg" alt="Привлечение клиентов" /> */}
+              {/* <FaUsers size={40} color="#333" /> */}
+              <div className="icon">💼</div>
               <h3>Привлечение клиентов</h3>
               <p>Система помогает находить новых клиентов легко.</p>
             </div>
             <div className="feature-card">
-              <img src="/icons/analytics.svg" alt="Аналитика" />
+              {/* <img src="/icons/analytics.svg" alt="Аналитика" /> */}
+              {/* <FaChartLine size={40} color="#333" /> */}
+              <div className="icon">📊</div>
               <h3>Аналитика</h3>
               <p>Отслеживайте рост вашего бизнеса в реальном времени.</p>
             </div>
@@ -65,36 +72,41 @@ function App() {
       {/* Pricing Section */}
       <section className="pricing">
         <div className="container">
-          <h2>Тарифы</h2>
+          <h2 className="advantages-title">Тарифы</h2>
           <div className="pricing-table">
-            <div className="pricing-plan">
-              <h3>Бесплатный</h3>
-              <p>Для старта вашего салона</p>
+            <div className="pricing-plan pro">
+              <h3>Про</h3>
+              <p>Идеально для старта вашего салона</p>
+              <p className="price">500 ₽/мес</p>
+              <button className="btn">Выбрать пакет</button>
+              <p className="credit-note">Без привязки карты</p>
               <ul>
-                <li>Онлайн-запись</li>
+                <li>Форма онлайн-записи</li>
                 <li>Напоминания клиентам</li>
+                <li>Базовая поддержка</li>
               </ul>
-              <button>Попробовать</button>
             </div>
-            <div className="pricing-plan premium">
+            <div className="pricing-plan enterprise">
               <h3>Премиум</h3>
-              <p>Все функции без ограничений</p>
+              <p>Для полного набора возможностей</p>
+              <p className="price">15,000 ₽/мес</p>
+              <button className="btn">Выбрать пакет</button>
+              <p className="credit-note">Без привязки карты</p>
               <ul>
-                <li>Онлайн-запись</li>
-                <li>Напоминания клиентам</li>
-                <li>Аналитика и отчёты</li>
+                <li>Уникальный дизайн сайта</li>
                 <li>Маркетинговые инструменты</li>
+                <li>Полная поддержка</li>
               </ul>
-              <button>Выбрать</button>
             </div>
           </div>
         </div>
       </section>
 
+
       {/* Testimonials Section */}
       <section className="testimonials">
         <div className="container">
-          <h2>Отзывы клиентов</h2>
+          <h2 className="advantages-title">Примеры наших работ</h2>
           <div className="testimonial-cards">
             <div className="testimonial-card">
               <p>“Сервис помог нам привлечь новых клиентов и упростить запись!”</p>
