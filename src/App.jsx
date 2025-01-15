@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import './App.css';
-import { FaClock, FaUsers, FaChartLine } from 'react-icons/fa';
+import beautySalonImage from './assets/beautySalon.jpg';
+
 
 function App() {
+  
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsPopupOpen(!isPopupOpen);
+  };
 
   const [formStatus, setFormStatus] = useState('');
 
@@ -33,8 +40,12 @@ function App() {
           <p>Удобный сервис для записи, продвижения и управления салоном красоты.</p>
           
           <a href="#form">
-            <button className="cta-button">Оставить заявку</button>
+            <button className="cta-button">Подать заявку</button>
           </a>
+
+          {/* <a href="#form">
+            <button className="btn">Подать заявку</button>
+          </a> */}
           
         </div>
       </section>
@@ -75,10 +86,12 @@ function App() {
           <h2 className="advantages-title">Тарифы</h2>
           <div className="pricing-table">
             <div className="pricing-plan pro">
-              <h3>Про</h3>
+              <h3>Стартап</h3>
               <p>Идеально для старта вашего салона</p>
-              <p className="price">500 ₽/мес</p>
-              <button className="btn">Выбрать пакет</button>
+              <p className="price">10 €/мес</p>
+              <a href="#form">
+                <button className="btn">Подать заявку</button>
+                </a>
               <p className="credit-note">Без привязки карты</p>
               <ul>
                 <li>Форма онлайн-записи</li>
@@ -86,16 +99,33 @@ function App() {
                 <li>Базовая поддержка</li>
               </ul>
             </div>
+            <div className="pricing-plan pro">
+              <h3>Про</h3>
+              <p>Баланс цены и возможностей</p>
+              <p className="price">50 €/мес</p>
+              <a href="#form">
+                <button className="btn">Подать заявку</button>
+                </a>
+              <p className="credit-note">Без привязки карты</p>
+              <ul>
+                <li>Готовый сайт для вашего салона</li>
+                <li>Инструменты для аналитики</li>
+                <li>Маркетинговая поддержка</li>
+              </ul>
+            </div>
             <div className="pricing-plan enterprise">
               <h3>Премиум</h3>
               <p>Для полного набора возможностей</p>
-              <p className="price">15,000 ₽/мес</p>
-              <button className="btn">Выбрать пакет</button>
+              <p className="price">150 €/мес</p>
+              <a href="#form">
+                <button className="btn">Подать заявку</button>
+              </a>
+            
               <p className="credit-note">Без привязки карты</p>
               <ul>
-                <li>Уникальный дизайн сайта</li>
+                <li>Уникальный дизайн сайта и брендинг</li>
                 <li>Маркетинговые инструменты</li>
-                <li>Полная поддержка</li>
+                <li>Поддержка 24/7</li>
               </ul>
             </div>
           </div>
@@ -104,7 +134,7 @@ function App() {
 
 
       {/* Testimonials Section */}
-      <section className="testimonials">
+      {/* <section className="testimonials">
         <div className="container">
           <h2 className="advantages-title">Примеры наших работ</h2>
           <div className="testimonial-cards">
@@ -118,7 +148,7 @@ function App() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       
       {/* Contact Section */}
        <section id="form" className="contact">
@@ -133,6 +163,28 @@ function App() {
           {formStatus && <p>{formStatus}</p>}
         </div>
       </section>
+
+      {/* Кнопка для показа popup */}
+      {/* <section className="portfolio">
+        <div className="container">
+          <h2>Примеры наших работ</h2>
+          <button className="popup-button" onClick={togglePopup}>
+            Посмотреть работу
+          </button>
+        </div>
+      </section> */}
+
+      {/* Popup с изображением */}
+      {isPopupOpen && (
+        <div className="popup">
+          <div className="popup-content">
+            <button className="close-button" onClick={togglePopup}>
+              ×
+            </button>
+            <img src={beautySalonImage} alt="Пример работы" />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

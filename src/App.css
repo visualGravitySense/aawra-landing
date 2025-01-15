@@ -29,7 +29,7 @@ body {
   margin: 20px 0;
 }
 
-.cta-button {
+/* .cta-button {
   background: #fff;
   color: #ca1c39;
   padding: 10px 20px;
@@ -42,7 +42,7 @@ body {
 
 .cta-button:hover {
   background: #ffe0e6;
-}
+} */
 
 .advantages-title {
   font-family: 'Cursive', sans-serif; /* Elegant font like a beauty brand */
@@ -152,9 +152,41 @@ body {
   margin: 10px 0;
 }
 
+.hero .cta-button {
+  background: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background: transparent; */
+  color: #333;
+  border: 1px solid #333;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 15px 0;
+  transition: background 0.3s ease, color 0.3s ease;
+  position: relative;
+  box-shadow: 6px 6px 0px #383838; /* Добавлена тень */
+}
+
+.hero .cta-button:hover {
+  background: #333;
+  color: #fff;
+  box-shadow: 3px 3px 0px #8f8f8f; /* Тень меняет цвет при наведении */
+}
+
+/* .hero .cta-button::after {
+  content: "→"; 
+  margin-left: 10px;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+} */
 
 
-.pricing-plan .btn {
+
+/* .pricing-plan .btn {
   display: block;
   background: #333;
   color: #fff;
@@ -170,7 +202,7 @@ body {
 
 .pricing-plan .btn:hover {
   background: #555;
-}
+} */
 
 .pricing-plan .credit-note {
   font-size: 0.9rem;
@@ -345,4 +377,63 @@ body {
   .cta-button {
     font-size: 0.9rem;
   }
+}
+
+
+/* Popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 90%;
+  text-align: center;
+}
+
+.popup-content img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff758c;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.popup-button {
+  background: #ff758c;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.popup-button:hover {
+  background: #e64e70;
 }
