@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import './App.css';
 import beautySalonImage from './assets/beautySalon.jpg';
+import hairStudioImage from './assets/hairStudio.jpeg';
+import massageServiceImage from './assets/massageService.jpg';
+import serviceBeautyImage from './assets/serviceBeauty.jpg';
 
 
 function App() {
@@ -53,7 +56,7 @@ function App() {
       {/* Features Section */}
       <section className="features">
         <div className="container">
-        <h2 class="advantages-title">Наши преимущества</h2>
+        <h2 class="advantages-title">Выгоды</h2>
           <div className="feature-cards">
             <div className="feature-card">
               {/* <img src="/icons/time-saving.svg" alt="Экономия времени" /> */}
@@ -88,7 +91,7 @@ function App() {
             <div className="pricing-plan pro">
               <h3>Стартап</h3>
               <p>Идеально для старта вашего салона</p>
-              <p className="price">10 €/мес</p>
+              <p className="price">45 €/год</p>
               <a href="#form">
                 <button className="btn">Подать заявку</button>
                 </a>
@@ -102,28 +105,28 @@ function App() {
             <div className="pricing-plan pro">
               <h3>Про</h3>
               <p>Баланс цены и возможностей</p>
-              <p className="price">50 €/мес</p>
+              <p className="price">75 €/год</p>
               <a href="#form">
                 <button className="btn">Подать заявку</button>
                 </a>
               <p className="credit-note">Без привязки карты</p>
               <ul>
                 <li>Готовый сайт для вашего салона</li>
-                <li>Инструменты для аналитики</li>
+                <li>Отчеты аналитики</li>
                 <li>Маркетинговая поддержка</li>
               </ul>
             </div>
             <div className="pricing-plan enterprise">
               <h3>Премиум</h3>
               <p>Для полного набора возможностей</p>
-              <p className="price">150 €/мес</p>
+              <p className="price">145 €/год</p>
               <a href="#form">
                 <button className="btn">Подать заявку</button>
               </a>
             
               <p className="credit-note">Без привязки карты</p>
               <ul>
-                <li>Уникальный дизайн сайта и брендинг</li>
+                <li>Уникальный дизайн и брендинг</li>
                 <li>Маркетинговые инструменты</li>
                 <li>Поддержка 24/7</li>
               </ul>
@@ -134,21 +137,47 @@ function App() {
 
 
       {/* Testimonials Section */}
-      {/* <section className="testimonials">
+      <section className="testimonials">
         <div className="container">
           <h2 className="advantages-title">Примеры наших работ</h2>
           <div className="testimonial-cards">
             <div className="testimonial-card">
-              <p>“Сервис помог нам привлечь новых клиентов и упростить запись!”</p>
-              <h4>Анна, салон "Красота и уют"</h4>
+              <p>“Обновленный брендинг, новый сайт с детально продуманным UI/UX и система регистрации.”</p>
+              <h4>Сайт салона красоты</h4>
+
+              {/* Кнопка для показа popup 1*/}
+              <section className="portfolio">
+                <div className="container">
+                  <button className="popup-button" onClick={togglePopup}>
+                    Посмотреть работу
+                  </button>
+                </div>
+              </section>
+
+              {/* Popup с изображением 1*/}
+              {isPopupOpen && (
+                <div className="popup">
+                  <div className="popup-content">
+                    <button className="close-button" onClick={togglePopup}>
+                      ×
+                    </button>
+                    <div className="image-container">
+                      <img src={beautySalonImage} alt="Пример работы" />
+                    </div>
+                  </div>
+                </div>
+              )}
+              
             </div>
-            <div className="testimonial-card">
+            {/* <div className="testimonial-card">
               <p>“Простое управление записью и аналитика – то, что нам нужно.”</p>
               <h4>Ирина, салон "Шарм"</h4>
-            </div>
+            </div> */}
           </div>
+
+          
         </div>
-      </section> */}
+      </section>
       
       {/* Contact Section */}
        <section id="form" className="contact">
@@ -164,27 +193,8 @@ function App() {
         </div>
       </section>
 
-      {/* Кнопка для показа popup */}
-      {/* <section className="portfolio">
-        <div className="container">
-          <h2>Примеры наших работ</h2>
-          <button className="popup-button" onClick={togglePopup}>
-            Посмотреть работу
-          </button>
-        </div>
-      </section> */}
+      
 
-      {/* Popup с изображением */}
-      {isPopupOpen && (
-        <div className="popup">
-          <div className="popup-content">
-            <button className="close-button" onClick={togglePopup}>
-              ×
-            </button>
-            <img src={beautySalonImage} alt="Пример работы" />
-          </div>
-        </div>
-      )}
     </div>
   );
 }

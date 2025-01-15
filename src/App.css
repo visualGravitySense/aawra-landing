@@ -389,17 +389,20 @@ body {
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   z-index: 1000;
 }
 
 .popup-content {
+  position: relative;
+  width: 80%;
+  max-height: 90%; /* Ограничение по высоте */
   background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 90%;
-  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .popup-content img {
@@ -411,16 +414,12 @@ body {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: #ff758c;
+  background: #f00;
   color: #fff;
   border: none;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  padding: 8px 12px;
   cursor: pointer;
-  font-size: 20px;
-  line-height: 30px;
-  text-align: center;
+  border-radius: 4px;
 }
 
 .popup-button {
@@ -436,4 +435,15 @@ body {
 
 .popup-button:hover {
   background: #e64e70;
+}
+
+.image-container {
+  flex: 1;
+  overflow-y: auto; /* Добавляем вертикальную прокрутку */
+  padding: 10px;
+}
+
+.image-container img {
+  width: 100%; /* Чтобы изображение адаптировалось по ширине */
+  height: auto;
 }
