@@ -574,18 +574,18 @@ body {
 }
 
 .popup-button {
-  background: #ff758c;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s;
+  text-decoration: none; /* Remove underline */
+  background-color: #4CAF50; /* Button background color */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Add padding */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  display: inline-block; /* To make it behave like a button */
+  transition: background-color 0.3s; /* Smooth transition on hover */
 }
 
 .popup-button:hover {
-  background: #e64e70;
+  background-color: #45a049; /* Darker shade on hover */
 }
 
 .image-container {
