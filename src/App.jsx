@@ -6,14 +6,43 @@ import hairStudioImage from './assets/hairStudio.jpeg';
 import massageServiceImage from './assets/massageService.jpg';
 import serviceBeautyImage from './assets/serviceBeauty.jpg';
 
+// import { Worker, Viewer } from '@react-pdf-viewer/core';
+import { pdfjs } from 'react-pdf';
+
+import { Worker, Viewer } from '@react-pdf-viewer/core';
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+
+// Импортируем стили для PDF-Viewer
+// import '@react-pdf-viewer/core/lib/styles/index.css';
+// import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+
+// import { Worker, Viewer } from '@react-pdf-viewer/core';
+// import '@react-pdf-viewer/core/lib/styles/index.css'; // Для стилей
+// import '@react-pdf-viewer/default-layout/lib/styles/index.css'; // Если используете layout
+
+const pdfUrl = './assets/pos-smart-features.pdf'; // Make sure the PDF path is correct
 
 function App() {
   
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
+  const workerUrl = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js`;
+  
   const togglePopup = () => {
     setIsPopupOpen(!isPopupOpen);
   };
+
+
+
+  // Функция для открытия и закрытия pop-up
+  // const togglePopup = () => {
+  //   setIsPopupOpen(!isPopupOpen);
+  // };
+
+  // const togglePopup = () => {
+  //   setIsPopupOpen(!isPopupOpen);
+  // };
 
   const [formStatus, setFormStatus] = useState('');
 
@@ -52,6 +81,14 @@ function App() {
           
         </div>
       </section>
+
+      {/* <section className="portfolio">
+        <div className="container">
+          <a href="/aawra-landing/assets/pos-smart-features.pdf" download className="popup-button">
+            Скачать презентацию
+          </a>
+        </div>
+      </section> */}
 
 
       <section className="service-description">
@@ -292,48 +329,69 @@ function App() {
       </section>
 
 
-      {/* Testimonials Section */}
+      {/* PDF Presentation component */}
       <section className="testimonials">
         <div className="container">
-          <h2 className="advantages-title">Примеры наших работ</h2>
+          <h2 className="advantages-title">Презентация сервиса</h2>
           <div className="testimonial-cards">
             <div className="testimonial-card">
-              <p>“Обновленный брендинг, новый сайт с детально продуманным UI/UX и система регистрации.”</p>
-              <h4>Сайт салона красоты</h4>
+              <p>Описание всех возможностей системы</p>
+              <h4>POS система для салонов красоты</h4>
 
-              {/* Кнопка для показа popup 1*/}
               <section className="portfolio">
                 <div className="container">
-                  <button className="popup-button" onClick={togglePopup}>
-                    Посмотреть работу
-                  </button>
+                  <a href="/aawra-landing/assets/pos-smart-features.pdf" download className="popup-button">
+                    Скачать презентацию
+                  </a>
                 </div>
               </section>
 
-              {/* Popup с изображением 1*/}
+              {/* <section className="portfolio">
+                <div className="container">
+                <a href="aawra-landing/assets/pos-smart-features.pdf" download className="popup-button">
+                  Скачать презентацию
+                </a> */}
+
+                  {/* <a href="./assets/pos-smart-features.pdf" download className="popup-button"> */}
+                  {/* <a href={pdfUrl} download className="popup-button"> */}
+                    {/* Скачать презентацию */}
+                  {/* </a> */}
+                {/* </div> */}
+              {/* </section> */}
+
+              {/* Button to trigger the pop-up */}
+              {/* <section className="portfolio">
+                <div className="container">
+                  <button className="popup-button" onClick={togglePopup}>
+                    Скачать презентацию
+                  </button>
+                </div>
+              </section> */}
+
+              {/* Popup with PDF */}
               {isPopupOpen && (
                 <div className="popup">
                   <div className="popup-content">
                     <button className="close-button" onClick={togglePopup}>
                       ×
                     </button>
-                    <div className="image-container">
-                      <img src={beautySalonImage} alt="Пример работы" />
-                    </div>
+
+                    {/* Using react-pdf viewer to render the PDF */}
+                    <Worker workerUrl={`https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`}>
+                      <div style={{ height: '80vh', overflowY: 'auto' }}>
+                        <Viewer fileUrl={pdfUrl} />
+                      </div>
+                    </Worker>
                   </div>
                 </div>
               )}
-              
             </div>
-            {/* <div className="testimonial-card">
-              <p>“Простое управление записью и аналитика – то, что нам нужно.”</p>
-              <h4>Ирина, салон "Шарм"</h4>
-            </div> */}
           </div>
-
-          
         </div>
       </section>
+
+
+      
       
       {/* Contact Section */}
        <section id="form" className="contact">
