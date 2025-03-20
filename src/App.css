@@ -152,6 +152,157 @@ body {
   margin: 10px 0;
 }
 
+
+.compare {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #f8f9fa;
+}
+
+.compare-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.compare-table {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.compare-plan {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 0 1 calc(40% - 10px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #5a5a5a; /* Добавлена тонкая обводка */
+  text-align: left; /* Выравнивание текста по левому краю */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.compare-plan ul {
+  list-style-type: none; /* Убирает точки у списка */
+  padding: 0; /* Убирает отступы слева */
+}
+
+.compare-plan ul li {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0;
+  padding-left: 20px; /* Добавляет отступ слева, чтобы визуально были отделены пункты */
+  position: relative;
+}
+
+
+.compare-plan:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.compare-plan h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.compare-plan .price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+
+.compare {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #f8f9fa;
+}
+
+.compare-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.compare-table {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.compare-plan {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 0 1 calc(33% - 20px); /* Увеличиваем ширину на больших экранах */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #5a5a5a; /* Добавлена тонкая обводка */
+  text-align: left; /* Выравнивание текста по левому краю */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.compare-plan ul {
+  list-style-type: none; /* Убирает точки у списка */
+  padding: 0; /* Убирает отступы слева */
+}
+
+.compare-plan ul li {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0;
+  padding-left: 20px; /* Добавляет отступ слева, чтобы визуально были отделены пункты */
+  position: relative;
+}
+
+.compare-plan:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.compare-plan h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.compare-plan .price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+
+
+/* Медиазапросы для мобильных устройств */
+@media (max-width: 768px) {
+  .compare-table {
+    flex-direction: column; /* Размещение блоков в колонку */
+  }
+
+  .compare-plan {
+    flex: 0 1 100%; /* Устанавливаем ширину 100% для мобильных устройств */
+    margin-bottom: 20px; /* Отступ между карточками */
+  }
+
+  .compare-title {
+    font-size: 1.5rem; /* Уменьшаем размер заголовка */
+  }
+
+  .compare-plan h3 {
+    font-size: 1.25rem; /* Уменьшаем размер заголовка в карточке */
+  }
+
+  .compare-plan .price {
+    font-size: 1.5rem; /* Уменьшаем размер цены */
+  }
+
+  .compare-plan ul li {
+    font-size: 0.9rem; /* Уменьшаем размер текста в списке */
+  }
+}
+
+
+
 .hero .cta-button {
   background: #fff;
   display: inline-flex;
@@ -446,4 +597,168 @@ body {
 .image-container img {
   width: 100%; /* Чтобы изображение адаптировалось по ширине */
   height: auto;
+}
+
+
+.service-description {
+  padding: 50px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.service-info {
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  text-align: left;
+}
+
+.service-info h3 {
+  font-size: 1.5rem;
+  color: #1c6dca;
+  margin-bottom: 15px;
+}
+
+.service-info p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .service-description {
+    padding: 30px 15px; /* Уменьшаем отступы для мобильных */
+  }
+
+  .service-title {
+    font-size: 1rem; /* Уменьшаем размер заголовка */
+  }
+}
+
+.service-list {
+  list-style: none;
+  padding: 0;
+}
+
+.service-list li {
+  font-size: 1.1rem;
+  color: #333;
+  background: #fff;
+  border-left: 5px solid #1c6dca;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+.container .contactParagraph {
+  color: #1c6dca;
+}
+
+
+.contact-info {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #f8f9fa;
+}
+
+.contact-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 карточки в ряд на больших экранах */
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-items: center;
+}
+
+.contact-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #5a5a5a;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; /* карточки растягиваются по ширине на мобильных устройствах */
+  max-width: 250px; /* ограничение ширины карточки */
+}
+
+.contact-card .icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.contact-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.contact-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.contact-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+  .contact-cards {
+    grid-template-columns: repeat(2, 1fr); /* 2 карточки в ряд на планшетах */
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-cards {
+    grid-template-columns: 1fr; /* 1 карточка в ряд на мобильных устройствах */
+  }
+
+  .contact-card {
+    max-width: none; /* убираем ограничение ширины на мобильных */
+    width: 100%; /* карточки будут растягиваться по ширине контейнера */
+  }
+}
+
+
+/* Стилизация ссылок в блоке контактных данных */
+.contact-link {
+  text-decoration: none; /* Убираем подчеркивание */
+  color: inherit; /* Сохраняем цвет текста как у родительского элемента */
+  transition: color 0.3s ease; /* Плавный переход цвета при наведении */
+}
+
+.contact-link:hover {
+  color: #007bff; /* Цвет при наведении (синий) */
+}
+
+.contact-link:focus {
+  outline: none; /* Убираем фокусное кольцо, если не нужно */
+  color: #0056b3; /* Цвет при фокусе */
+}
+
+.contact-card {
+  position: relative;
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+  .contact-link:hover {
+    color: #0056b3; /* Цвет при наведении на устройствах с маленькими экранами */
+  }
 }
