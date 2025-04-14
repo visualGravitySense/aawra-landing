@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aawra | Точка продаж для салонов красоты</title>
+    <style>
+        :root {
+            --primary: #ff6b98;
+            --secondary: #6c63ff;
+            --dark: #333333;
+            --light: #f9f9f9;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #ff4d85;
+        }
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background-image: url('/images/beautySalon.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-text {
+            flex: 1;
+            color: var(--white);
+        }
+        
+        .hero-text h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+        
+        .hero-text h1 span {
+            color: var(--primary);
+        }
+        
+        .hero-text p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: var(--white);
+        }
+        
+        .hero-img {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .app-mockup {
+            width: 300px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border: 10px solid var(--white);
+            position: relative;
+        }
+        
+        .features {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .feature-cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .feature-card {
+            flex: 1;
+            min-width: 250px;
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #f0eaff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .feature-icon i {
+            font-size: 24px;
+            color: var(--secondary);
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .cta {
+            padding: 100px 0;
+            text-align: center;
+            background-color: #f8f2ff;
+        }
+        
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        #contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        #contact-form input,
+        #contact-form select,
+        #contact-form textarea {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+        }
+        
+        #contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        #contact-form button {
+            align-self: center;
+            margin-top: 10px;
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #5a52e0;
+        }
+        
+        .pricing {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .pricing-table {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .pricing-plan {
+            flex: 1;
+            min-width: 300px;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .pricing-plan:hover {
+            transform: translateY(-10px);
+        }
+        
+        .pricing-plan h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .pricing-plan .price {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .pricing-plan ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .pricing-plan ul li {
+            margin-bottom: 10px;
+        }
+        
+        .pricing-plan.enterprise {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+        }
+        
+        .pricing-plan.enterprise .price {
+            color: var(--white);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 14px;
+            color: #999;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-text {
+                order: 2;
+            }
+            
+            .hero-img {
+                order: 1;
+                margin-bottom: 40px;
+            }
+            
+            .feature-cards {
+                flex-direction: column;
+            }
+            
+            .pricing-table {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Aawra<span>POS</span></div>
+                <ul class="nav-links">
+                    <li><a href="#features">Возможности</a></li>
+                    <li><a href="#pricing">Тарифы</a></li>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#contact" class="btn">Подать заявку</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Умная <span>POS-система</span> для салонов красоты</h1>
+                    <p>Удобный сервис для записи, продвижения и управления салоном красоты. Оптимизируйте бизнес без лишних затрат!</p>
+                    <a href="#contact" class="btn">Подать заявку</a>
+                    <a href="#features" class="btn btn-secondary">Узнать больше</a>
+                </div>
+                <div class="hero-img">
+                    <img src="/images/serviceBeauty.jpg" alt="Aawra POS" class="app-mockup" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Почему выбирают Aawra POS</h2>
+                <p>Умная система для управления салоном красоты</p>
+            </div>
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6c63ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                    </div>
+                    <h3>Онлайн-запись</h3>
+                    <p>Клиенты могут записываться через сайт или приложение в удобное время.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6c63ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3>Управление расписанием</h3>
+                    <p>AI анализирует загруженность мастеров и предлагает оптимальные слоты.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6c63ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                    </div>
+                    <h3>Аналитика и отчёты</h3>
+                    <p>Отслеживание популярности услуг, частоты посещений и эффективности мастеров.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Тарифные планы</h2>
+                <p>Выберите подходящий тариф для вашего салона</p>
+            </div>
+            <div class="pricing-table">
+                <div class="pricing-plan">
+                    <h3>Базовый</h3>
+                    <p>Идеально для старта вашего салона</p>
+                    <p class="price">9 €/месяц</p>
+                    <ul>
+                        <li>Форма онлайн-записи</li>
+                        <li>Поддержка купонов и промокодов</li>
+                        <li>Базовая поддержка</li>
+                    </ul>
+                    <a href="#contact" class="btn">Подать заявку</a>
+                </div>
+                <div class="pricing-plan">
+                    <h3>Оптимальный</h3>
+                    <p>Баланс цены и возможностей</p>
+                    <p class="price">19 €/месяц</p>
+                    <ul>
+                        <li>Готовый сайт для вашего салона</li>
+                        <li>Роли и права доступа сотрудников</li>
+                        <li>Маркетинговая поддержка</li>
+                    </ul>
+                    <a href="#contact" class="btn">Подать заявку</a>
+                </div>
+                <div class="pricing-plan enterprise">
+                    <h3>Премиум</h3>
+                    <p>Для полного набора возможностей</p>
+                    <p class="price">39 €/месяц</p>
+                    <ul>
+                        <li>Уникальный дизайн и брендинг</li>
+                        <li>Маркетинговые инструменты</li>
+                        <li>Поддержка 24/7</li>
+                    </ul>
+                    <a href="#contact" class="btn">Подать заявку</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Готовы оптимизировать ваш салон красоты?</h2>
+            <p>Оставьте заявку, и мы свяжемся с вами для обсуждения деталей.</p>
+            <form id="contact-form" action="#" method="POST">
+                <input type="text" name="name" placeholder="Ваше имя" required>
+                <input type="email" name="email" placeholder="Ваш email" required>
+                <input type="tel" name="phone" placeholder="Ваш телефон" required>
+                <select name="plan" required>
+                    <option value="">Выберите тариф</option>
+                    <option value="basic">Базовый</option>
+                    <option value="optimal">Оптимальный</option>
+                    <option value="premium">Премиум</option>
+                </select>
+                <textarea name="message" placeholder="Ваше сообщение"></textarea>
+                <button type="submit" class="btn">Отправить заявку</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Aawra POS</h3>
+                    <p>Умная система для управления салоном красоты, которая упрощает продажи и учет.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Быстрые ссылки</h3>
+                    <ul class="footer-links">
+                        <li><a href="#features">Возможности</a></li>
+                        <li><a href="#pricing">Тарифы</a></li>
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Правовая информация</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Условия использования</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                        <li><a href="#">Политика использования файлов cookie</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul class="footer-links">
+                        <li>Email: info@aawra.ee</li>
+                        <li>Телефон: +372 5897 6398</li>
+                        <li>Адрес: Viru väljak 4, Tallinn</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Aawra POS. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
